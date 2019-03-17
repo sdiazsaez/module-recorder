@@ -1,0 +1,38 @@
+{
+    "name": "larangular/module-recorder",
+    "description": "pending",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Simon Diaz",
+            "email": "sdiaz.sz@gmail.com"
+        }
+    ],
+    "require": {
+        "php": "^7.1.3",
+        "larangular/support": "0.1.*",
+        "illuminate/support": "^5.7"
+    },
+    "require-dev": {
+    },
+    "autoload": {
+        "psr-4": {
+            "Larangular\\ModuleRecorder\\": "./src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Larangular\\ModuleRecorder\\Tests\\": "./tests"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Larangular\\ModuleRecorder\\ModuleRecorderServiceProvider"
+            ],
+            "aliases": {
+                "ModuleRegister": "Larangular\\ModuleRecorder\\Facades\\ModuleRegister"
+            }
+        }
+    }
+}
