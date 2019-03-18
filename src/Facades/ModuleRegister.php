@@ -1,6 +1,6 @@
 <?php
 
-namespace Larangular\WebServiceManager\Facades;
+namespace Larangular\ModuleRecorder\Facades;
 
 use Illuminate\Support\Facades\Facade;
 

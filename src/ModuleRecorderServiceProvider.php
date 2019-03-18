@@ -4,6 +4,7 @@ namespace Larangular\ModuleRecorder;
 
 use \Illuminate\Support\ServiceProvider;
 use Larangular\ModuleRecorder\Register\ModuleRegister;
+use Larangular\ModuleRecorder\Facades\ModuleRegister as RegisterFacade;
 
 class ModuleRecorderServiceProvider extends ServiceProvider {
 
@@ -27,7 +28,7 @@ class ModuleRecorderServiceProvider extends ServiceProvider {
 
     public function provides() {
         return [
-            ModuleRegister::class,
+            RegisterFacade::class,
         ];
     }
 
