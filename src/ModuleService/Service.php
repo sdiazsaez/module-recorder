@@ -6,6 +6,6 @@ abstract class Service {
 
     abstract public static function name(): string;
 
-    abstract public function action();
+    abstract public function action(array $data = []);
 
 }
