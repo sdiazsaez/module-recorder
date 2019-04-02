@@ -1,12 +1,23 @@
 <?php
 
-namespace Larangular\ModuleRecorder\Register;
+namespace Larangular\ModuleRecorder\Module;
 
 class ModuleRegister {
 
     private $modules        = [];
     private $registeredKeys = [];
 
+    public function register(string $moduleName): Module {
+        $module = new Module($moduleName);
+        $this->modules[$moduleName] = $module;
+        return $this->modules[$moduleName];
+    }
+
+    public function getModule(string $moduleName): Module {
+        return $this->modules[$moduleName];
+    }
+
+    /*
     public function register(ModuleDescriptor $serviceDescriptor): void {
         $this->registerKeys($serviceDescriptor->provider(), $serviceDescriptor->serviceName());
         $this->modules[$this->makeModuleKey($serviceDescriptor->provider(),
@@ -15,7 +26,7 @@ class ModuleRegister {
 
     public function getModule(string $provider, string $service): ModuleDescriptor {
         return $this->modules[$this->makeModuleKey($provider, $service)];
-    }
+    }*/
 
     public function getProviders(): array {
         return array_keys($this->registeredKeys);

@@ -1,19 +1,30 @@
 <?php
 
-namespace Larangular\UFScraper\Tests;
+namespace Larangular\ModuleRecorder\Tests;
 
-use Larangular\UFScraper\UFScraperServiceProvider;
+use Larangular\ModuleRecorder\Facades\ModuleRegister;
+use Larangular\ModuleRecorder\Facades\ModuleRequest;
+use Larangular\ModuleRecorder\Facades\ProviderRegister;
+use Larangular\Support\SupportServiceProvider;
 
 abstract class TestCase extends \Orchestra\Testbench\TestCase {
 
+    /*
     protected function getEnvironmentSetUp($app) {
         $app['config']->set('uf-scraper', require(__DIR__ . '/../config/uf-scraper.php'));
+    }*/
+
+    protected function getPackageProviders($app) {
+        return [
+            SupportServiceProvider::class,
+        ];
     }
 
-    protected function getPackageProviders($app)
-    {
+    protected function getPackageAliases($app) {
         return [
-            UFScraperServiceProvider::class
+            'ModuleRegister'   => ModuleRegister::class,
+            'ProviderRegister' => ProviderRegister::class,
+            'ModuleRequest'    => ModuleRequest::class,
         ];
     }
 

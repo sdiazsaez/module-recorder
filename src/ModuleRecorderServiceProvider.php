@@ -3,8 +3,8 @@
 namespace Larangular\ModuleRecorder;
 
 use \Illuminate\Support\ServiceProvider;
-use Larangular\ModuleRecorder\Register\ModuleRegister;
-use Larangular\ModuleRecorder\Facades\ModuleRegister as RegisterFacade;
+use Larangular\ModuleRecorder\Module\ModuleRegister;
+use Larangular\ModuleRecorder\ModuleProvider\ProviderRegister;
 
 class ModuleRecorderServiceProvider extends ServiceProvider {
 
@@ -28,13 +28,18 @@ class ModuleRecorderServiceProvider extends ServiceProvider {
 
     public function provides() {
         return [
-            RegisterFacade::class,
+            ModuleRegister::class,
+            ProviderRegister::class,
         ];
     }
 
     private function registerServiceRecords(): void {
         $this->app->singleton(ModuleRegister::class, function () {
             return new ModuleRegister();
+        });
+
+        $this->app->singleton(ProviderRegister::class, function () {
+            return new ProviderRegister();
         });
     }
 }

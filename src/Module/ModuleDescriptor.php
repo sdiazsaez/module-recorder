@@ -1,6 +1,6 @@
 <?php
 
-namespace Larangular\ModuleRecorder\Register;
+namespace Larangular\ModuleRecorder\Module;
 
 use Larangular\Support\Instance;
 use Larangular\WebServiceManager\Adapters\RequestForm;
