@@ -56,6 +56,7 @@ class ModuleRegisterTest extends TestCase {
                        ->registerService(SampleParentService::class);
 
         $provider = $this->getProvider()->addService(SampleChildService::class);
+
         $service = ModuleRequest::getService($this->getModuleName(), $this->getProviderName(), 'sampleParentService');
         $this->assertTrue($service->action() === 'action');
     }
