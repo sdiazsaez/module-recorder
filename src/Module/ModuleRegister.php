@@ -14,6 +14,9 @@ class ModuleRegister {
     }
 
     public function getModule(string $moduleName): Module {
+        if (!array_key_exists($moduleName, $this->modules)) {
+            throw new \Exception($moduleName.' module does not exist.');
+        }
         return $this->modules[$moduleName];
     }
 
