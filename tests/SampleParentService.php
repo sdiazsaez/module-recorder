@@ -12,7 +12,7 @@ abstract class SampleParentService extends Service {
         return 'sampleParentService';
     }
 
-    public function action() {
-        return 'action';
+    public function action(array $data = []) {
+        return ['hello'];
     }
 }

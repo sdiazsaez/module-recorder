@@ -9,11 +9,6 @@ use Larangular\Support\SupportServiceProvider;
 
 abstract class TestCase extends \Orchestra\Testbench\TestCase {
 
-    /*
-    protected function getEnvironmentSetUp($app) {
-        $app['config']->set('uf-scraper', require(__DIR__ . '/../config/uf-scraper.php'));
-    }*/
-
     protected function getPackageProviders($app) {
         return [
             SupportServiceProvider::class,

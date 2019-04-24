@@ -10,7 +10,7 @@ class SampleServiceGood extends Service {
         return 'sampleService';
     }
 
-    public function action() {
+    public function action(array $data = []) {
         return 'hello';
     }
 }
